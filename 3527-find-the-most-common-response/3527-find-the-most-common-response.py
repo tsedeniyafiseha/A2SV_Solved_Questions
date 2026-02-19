@@ -5,7 +5,7 @@ class Solution(object):
         count = Counter()
 
         for person in responses:
-            unique = set(person)   # remove duplicates per list
+            unique = set(person)   
             for word in unique:
                 count[word] += 1
 
