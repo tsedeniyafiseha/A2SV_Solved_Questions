@@ -1,21 +1,25 @@
 class Solution(object):
     def wordPattern(self, pattern, s):
-   
-        words = s.split()
+        """
+        :type pattern: str
+        :type s: str
+        :rtype: bool
+        """
+        words= s.split(" ")
+
+       
+
         if len(pattern) != len(words):
-            return False
-        
-        p_to_w = {}
-        w_to_p = {}
-        
-        for p, w in zip(pattern, words):
-            if p in p_to_w and p_to_w[p] != w:
-                return False
-            if w in w_to_p and w_to_p[w] != p:
-                return False
-            
-            p_to_w[p] = w
-            w_to_p[w] = p
-        
-        return True
+            return False 
+        map1={}
+        map2={}
+
+        for c, i in zip(words, pattern):
+            if c  in map1 and map1[c] != i :
+                return False 
+            elif i  in map2 and map2[i] !=c :
+                return False 
+            map1[c]= i 
+            map2[i]=c 
+        return True 
         
