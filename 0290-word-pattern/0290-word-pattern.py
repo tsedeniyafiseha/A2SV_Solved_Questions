@@ -1,12 +1,12 @@
-class Solution:
-    def wordPattern(self, pattern: str, s: str) -> bool:
+class Solution(object):
+    def wordPattern(self, pattern, s):
+   
         words = s.split()
-        
         if len(pattern) != len(words):
             return False
         
-        p_to_w = {}  
-        w_to_p = {}   
+        p_to_w = {}
+        w_to_p = {}
         
         for p, w in zip(pattern, words):
             if p in p_to_w and p_to_w[p] != w:
@@ -18,3 +18,4 @@ class Solution:
             w_to_p[w] = p
         
         return True
+        
