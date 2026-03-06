@@ -4,7 +4,7 @@ class NumMatrix:
         n = len(mat)
         m = len(mat[0])
 
-        # create prefix matrix with extra row and column
+        n
         self.pre = [[0 for _ in range(m + 1)] for _ in range(n + 1)]
 
         # build prefix sum
